@@ -1,0 +1,37 @@
+[user]
+	name = shenmishajing
+	email = shenmishajing@Gmail.com
+[core]
+	editor = code
+	excludesfile = /Users/zwh/.gitignore_global
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	g = git
+	unstage = reset HEAD
+	last = log -1 HEAD
+	visual = !gitk
+	i = init
+	r = remote
+	cn = config
+	a = add
+	ps = push
+	pl = pull
+	fe = fetch
+	f = fetch --all
+	cl = clone
+	d = diff
+	cia = commit -C HEAD -a --amend
+	lg = log --author=s --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+[mergetool]
+	keepBackup = false
+[merge]
+	tool = p4merge
+[http]
+	postBuffer = 524288000
+[ssh]
+	postBuffer = 524288000
+[credential]
+	helper = store
