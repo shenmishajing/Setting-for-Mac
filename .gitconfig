@@ -24,7 +24,7 @@
 	cl = clone
 	d = diff
 	cia = commit -C HEAD -a --amend
-	lg = log --author=s --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [mergetool]
 	keepBackup = false
 [merge]
