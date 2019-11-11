@@ -4,6 +4,7 @@
 [core]
 	editor = code
 	excludesfile = /Users/zwh/.gitignore_global
+	autocrlf = input
 [alias]
 	co = checkout
 	br = branch
@@ -30,9 +31,9 @@
 [merge]
 	tool = p4merge
 [http]
-	postBuffer = 524288000
+	postBuffer = 2097152000
 [ssh]
-	postBuffer = 524288000
+	postBuffer = 2097152000
 [credential]
 	helper = store
 [push]
