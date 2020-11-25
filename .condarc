@@ -17,3 +17,5 @@ custom_channels:
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 remote_read_timeout_secs: 600
 remote_connect_timeout_secs: 300
+always_yes: True
+auto_activate_base: false

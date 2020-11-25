@@ -2,7 +2,7 @@
 	name = shenmishajing
 	email = shenmishajing@Gmail.com
 [core]
-	editor = code
+	editor = code-insiders --wait
 	excludesfile = /Users/zwh/.gitignore_global
 	autocrlf = input
 [alias]
