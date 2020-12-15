@@ -1,6 +1,7 @@
 channels:
   - defaults
 show_channel_urls: true
+channel_alias: https://anaconda.mirrors.sjtug.sjtu.edu.cn
 default_channels:
   - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/r
   - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/main
