@@ -5,6 +5,8 @@
 	editor = code-insiders --wait
 	excludesfile = /Users/zwh/.gitignore_global
 	autocrlf = input
+[init]
+	defaultBranch = main
 [alias]
 	co = checkout
 	br = branch
