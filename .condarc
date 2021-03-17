@@ -8,7 +8,13 @@ default_channels:
 custom_channels:
   conda-forge: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/
   pytorch: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/
+  bioconda: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
+  menpo: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
+  soumith: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
+  viscid-hub: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
+  atztogo: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
+  pytorch-test: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
 remote_read_timeout_secs: 600
 remote_connect_timeout_secs: 300
-always_yes: True
+always_yes: true
 auto_activate_base: false
