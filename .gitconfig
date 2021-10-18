@@ -1,8 +1,8 @@
 [user]
 	name = shenmishajing
-	email = shenmishajing@Gmail.com
+	email = shenmishajing@gmail.com
 [core]
-	editor = code-insiders --wait
+	editor = co
 	excludesfile = /Users/zwh/.gitignore_global
 	autocrlf = input
 [init]
@@ -28,15 +28,9 @@
 	d = diff
 	cia = commit -C HEAD -a --amend
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
-[mergetool]
-	keepBackup = false
-[merge]
-	tool = p4merge
 [http]
 	postBuffer = 2097152000
 [ssh]
 	postBuffer = 2097152000
-[credential]
-	helper = store
 [push]
 	default = simple

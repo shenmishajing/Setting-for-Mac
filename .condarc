@@ -1,19 +1,17 @@
 channels:
   - defaults
 show_channel_urls: true
-channel_alias: https://anaconda.mirrors.sjtug.sjtu.edu.cn
 default_channels:
-  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/r
-  - https://anaconda.mirrors.sjtug.sjtu.edu.cn/pkgs/main
+  - http://mirrors.aliyun.com/anaconda/pkgs/main
+  - http://mirrors.aliyun.com/anaconda/pkgs/r
+  - http://mirrors.aliyun.com/anaconda/pkgs/msys2
 custom_channels:
-  conda-forge: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/
-  pytorch: https://anaconda.mirrors.sjtug.sjtu.edu.cn/cloud/
-  bioconda: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
-  menpo: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
-  soumith: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
-  viscid-hub: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
-  atztogo: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
-  pytorch-test: https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/
+  conda-forge: http://mirrors.aliyun.com/anaconda/cloud
+  msys2: http://mirrors.aliyun.com/anaconda/cloud
+  bioconda: http://mirrors.aliyun.com/anaconda/cloud
+  menpo: http://mirrors.aliyun.com/anaconda/cloud
+  pytorch: http://mirrors.aliyun.com/anaconda/cloud
+  simpleitk: http://mirrors.aliyun.com/anaconda/cloud
 remote_read_timeout_secs: 600
 remote_connect_timeout_secs: 300
 always_yes: true
