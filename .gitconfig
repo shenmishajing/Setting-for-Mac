@@ -5,6 +5,7 @@
 	editor = co
 	excludesfile = /Users/zwh/.gitignore_global
 	autocrlf = input
+	filemode = false
 [init]
 	defaultBranch = main
 [alias]
