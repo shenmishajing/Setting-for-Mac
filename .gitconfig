@@ -3,7 +3,7 @@
 	email = shenmishajing@gmail.com
 [core]
 	editor = co
-	excludesfile = /Users/zwh/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	filemode = false
 [init]
