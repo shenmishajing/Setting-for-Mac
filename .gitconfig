@@ -31,7 +31,11 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [http]
 	postBuffer = 2097152000
+[https]
+	postBuffer = 2097152000
 [ssh]
 	postBuffer = 2097152000
 [push]
 	default = simple
+[credential]
+        helper = store
