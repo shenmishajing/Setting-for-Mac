@@ -31,7 +31,10 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [http]
 	postBuffer = 2097152000
+	proxy = http://127.0.0.1:7890
 [ssh]
 	postBuffer = 2097152000
 [push]
 	default = simple
+[https]
+	proxy = http://127.0.0.1:7890
