@@ -37,6 +37,3 @@
 	postBuffer = 2097152000
 [push]
 	default = simple
-[credential]
-	helper = osxkeychain
-	helper = store
