@@ -1,14 +1,13 @@
-rm -rf $HOME/.condarc
-rm -rf $HOME/.gitconfig
-rm -rf $HOME/.gitignore_global
+rm -rf $HOME/.config/pip
+rm -rf $HOME/.config/git
+rm -rf $HOME/.config/conda
+rm -rf $HOME/.config/tmux
 rm -rf $HOME/.tmux.conf
-rm -rf $HOME/.pip
 
-ln -s `pwd`/Setting-for-Mac/.condarc $HOME/
-ln -s `pwd`/Setting-for-Mac/.gitconfig $HOME/
-ln -s `pwd`/Setting-for-Mac/.gitignore_global $HOME/
+mkdir -p $HOME/.config/tmux
+
+ln -s `pwd`/Setting-for-Mac/config/* $HOME/.config
 ln -s `pwd`/Setting-for-Mac/.tmux.conf $HOME/
-ln -s `pwd`/Setting-for-Mac/.pip $HOME/
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-bash ~/.tmux/plugins/tpm/bin/install_plugins
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+bash ~/.config/tmux/plugins/tpm/bin/install_plugins
