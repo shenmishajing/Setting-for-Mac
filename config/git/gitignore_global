@@ -101,7 +101,8 @@ Icon
 # Thumbnails
 ._*
 
-*temp*
+**/temp.*
+**/*.temp
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
