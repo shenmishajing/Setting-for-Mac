@@ -726,7 +726,18 @@ TSWLatexianTemp*
 *.tar
 *.zip
 
-#document
+# document
 *.pdf
 *.doc
 *.docx
+
+# image
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.ico
+*.tif
+*.tiff
+*.bmp
+*.svg
