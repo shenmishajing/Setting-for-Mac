@@ -1,0 +1,12 @@
+If:
+    PathMatch: [".*\\.cu", ".*\\.cuh"]
+
+CompileFlags:
+    Remove:
+        - --diag_suppress*
+        - --expt-relaxed-constexpr
+        - --expt-extended-lambda
+        - -forward-unknown-to-host-compiler
+        - -gencode*
+        - -Xcudafe
+        - -Xcompiler*

@@ -1,5 +1,6 @@
-rm -rf $HOME/.config/pip
 rm -rf $HOME/.config/git
+rm -rf $HOME/.config/clangd
+rm -rf $HOME/.config/pip
 rm -rf $HOME/.config/conda
 rm -rf $HOME/.config/tmux
 rm -rf $HOME/.tmux.conf
