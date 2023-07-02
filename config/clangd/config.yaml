@@ -1,6 +1,3 @@
-If:
-    PathMatch: [".*\\.cu", ".*\\.cuh"]
-
 CompileFlags:
     Remove:
         - --diag_suppress*
