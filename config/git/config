@@ -37,3 +37,5 @@
 	postBuffer = 2097152000
 [push]
 	default = simple
+[pull]
+	rebase = false
