@@ -1,4 +1,5 @@
 rm -rf $HOME/.zshrc
+rm -rf $HOME/.zshrc.pre-oh-my-zsh
 
 ln -s `pwd`/config/zsh/.zshrc $HOME
 
