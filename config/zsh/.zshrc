@@ -97,11 +97,6 @@ export GITSTATUS_CACHE_DIR=$XDG_CACHE_HOME/gitstatus
 source $ZSH/oh-my-zsh.sh
 export XDG_CACHE_HOME=$__old_xdg_home
 
-HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-if [ -f "$HB_CNF_HANDLER" ]; then
-source "$HB_CNF_HANDLER";
-fi
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -128,9 +123,19 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# custom plugin configs
+
+# z
+export ZSHZ_DATA=$ZSH_CUSTOM/plugins/z/data
+export ZSHZ_ECHO=1
+export ZSHZ_CASE=smart
+export ZSHZ_NO_RESOLVE_SYMLINKS=1
+
+# zsh-history-substring-search
 bindkey '^p' history-substring-search-up
 bindkey '^n' history-substring-search-down
 
+# zsh-autosuggestions
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238
 pasteinit() {
@@ -144,21 +149,6 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-export ZSHZ_DATA=$ZSH_CUSTOM/plugins/z/data
-export ZSHZ_ECHO=1
-export ZSHZ_CASE=smart
-export ZSHZ_NO_RESOLVE_SYMLINKS=1
-
-alias ls='lsd'
-alias l='ls -alg'
-alias co='code'
-export editor='code --wait'
-
-export HOMEBREW_API_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles"
-export HOMEBREW_PIP_INDEX_URL="https://mirrors.bfsu.edu.cn/pypi/web/simple"
-export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
-
 # set proxy
 export proxy_ip='localhost'
 export proxy_port='7890'
@@ -170,6 +160,23 @@ alias ep='echo "http_proxy=$http_proxy\nhttps_proxy=$https_proxy\nall_proxy=$all
 
 # use proxy in terminal
 sp
+
+# homebrew
+export HOMEBREW_API_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles"
+export HOMEBREW_PIP_INDEX_URL="https://mirrors.bfsu.edu.cn/pypi/web/simple"
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
+
+HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+if [ -f "$HB_CNF_HANDLER" ]; then
+source "$HB_CNF_HANDLER";
+fi
+
+# alias
+alias ls='lsd'
+alias l='ls -alg'
+alias co='code'
+export editor='code --wait'
 
 # To customize prompt, run `p10k configure` or edit $HOME/.config/zsh/.p10k.zsh.
 [[ ! -f $HOME/.config/zsh/.p10k.zsh ]] || source $HOME/.config/zsh/.p10k.zsh
