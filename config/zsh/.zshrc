@@ -173,8 +173,6 @@ source "$HB_CNF_HANDLER";
 fi
 
 # alias
-alias ls='lsd'
-alias l='ls -alg'
 alias co='code'
 export editor='code --wait'
 
