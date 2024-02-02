@@ -149,18 +149,6 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-# set proxy
-export proxy_ip='localhost'
-export proxy_port='7890'
-alias sp='export https_proxy=http://$proxy_ip:$proxy_port http_proxy=http://$proxy_ip:$proxy_port all_proxy=socks5://$proxy_ip:$proxy_port'
-# unset proxy
-alias up='unset all_proxy&&unset https_proxy&&unset http_proxy'
-# echo proxy
-alias ep='echo "http_proxy=$http_proxy\nhttps_proxy=$https_proxy\nall_proxy=$all_proxy"'
-
-# use proxy in terminal
-sp
-
 # alias
 alias co='code'
 export editor='code --wait'
