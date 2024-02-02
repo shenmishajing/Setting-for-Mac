@@ -149,9 +149,5 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-# alias
-alias co='code'
-export editor='code --wait'
-
 # To customize prompt, run `p10k configure` or edit $HOME/.config/zsh/.p10k.zsh.
 [[ ! -f $HOME/.config/zsh/.p10k.zsh ]] || source $HOME/.config/zsh/.p10k.zsh
