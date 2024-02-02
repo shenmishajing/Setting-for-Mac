@@ -161,17 +161,6 @@ alias ep='echo "http_proxy=$http_proxy\nhttps_proxy=$https_proxy\nall_proxy=$all
 # use proxy in terminal
 sp
 
-# homebrew
-export HOMEBREW_API_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles"
-export HOMEBREW_PIP_INDEX_URL="https://mirrors.bfsu.edu.cn/pypi/web/simple"
-export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
-
-HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
-if [ -f "$HB_CNF_HANDLER" ]; then
-source "$HB_CNF_HANDLER";
-fi
-
 # alias
 alias co='code'
 export editor='code --wait'
