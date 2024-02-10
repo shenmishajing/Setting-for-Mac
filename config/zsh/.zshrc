@@ -87,6 +87,7 @@ plugins=(
   zsh-history-substring-search
   zsh-autosuggestions
   fast-syntax-highlighting
+  extract
 )
 
 export HISTFILE=$ZSH/cache/.zsh_history
