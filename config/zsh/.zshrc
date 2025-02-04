@@ -168,7 +168,6 @@ alias ep='echo "http_proxy=$http_proxy\nhttps_proxy=$https_proxy\nall_proxy=$all
 sp
 
 # alias
-alias co='code'
 export editor='code --wait'
 
 # To customize prompt, run `p10k configure` or edit $HOME/.config/zsh/.p10k.zsh.
