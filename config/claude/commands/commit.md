@@ -1,6 +1,6 @@
 ---
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git commit:*)
-description: Create a conventional commit with emoji
+description: Create a conventional commit
 ---
 
 ## Your task
