@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,androidstudio,clion,clion,emacs,intellij,visualstudio,visualstudiocode,vim,jetbrains,xcode,xilinx,ada,android,basic,c,c++,cuda,cmake,csharp,database,dotnetcore,erlang,go,goland,hugo,java,julia,jupyternotebooks,latex,lua,python,r,ruby,rust,homebrew,maven,ninja,node,adobe,diff,ssh,scheme,svn,wordpress,archive,archives,audio,data,dropbox,font,gpg,images,video,text
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,androidstudio,clion,clion,emacs,intellij,visualstudio,visualstudiocode,vim,jetbrains,xcode,xilinx,ada,android,basic,c,c++,cuda,cmake,csharp,database,dotnetcore,erlang,go,goland,hugo,java,julia,jupyternotebooks,latex,lua,python,r,ruby,rust,homebrew,maven,ninja,node,adobe,diff,ssh,scheme,svn,wordpress,archive,archives,audio,data,dropbox,font,gpg,images,video,text
 
+### Claude Code ###
+**/.claude/settings.local.json
+
 ### Ada ###
 # Object file
 *.o
