@@ -7,6 +7,11 @@ return {
       always_show_bufferline = true,
       hidden = true,
       ignored = true,
+      sources = {
+        explorer = {
+          follow_file = false,
+        },
+      },
     },
   }
 }
