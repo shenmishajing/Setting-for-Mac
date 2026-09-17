@@ -1,6 +1,8 @@
 ---
+name: commit
+description: Create a conventional commit from the staged changes (or from all changes when nothing is staged), splitting unrelated changes into separate atomic commits.
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git commit:*)
-description: Create a conventional commit
+disable-model-invocation: true
 ---
 
 ## Your task
