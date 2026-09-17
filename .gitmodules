@@ -1,0 +1,3 @@
+[submodule "config/claude/skills/paper-skills"]
+	path = config/claude/skills/paper-skills
+	url = https://github.com/shenmishajing/paper-skills.git
