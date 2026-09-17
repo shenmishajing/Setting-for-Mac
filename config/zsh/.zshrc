@@ -92,11 +92,20 @@ plugins=(
 )
 
 export HISTFILE=$ZSH/cache/.zsh_history
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$(hostname -s)-${ZSH_VERSION}
+# Let oh-my-zsh name the compdump itself (it already handles the macOS DHCP
+# hostname quirk); only redirect its default directory ${ZDOTDIR:-$HOME} to our cache.
+local __old_zdotdir=$ZDOTDIR
 local __old_xdg_home=$XDG_CACHE_HOME
+ZDOTDIR=$ZSH/cache
 export XDG_CACHE_HOME=$ZSH/cache/p10k
 export GITSTATUS_CACHE_DIR=$XDG_CACHE_HOME/gitstatus
 source $ZSH/oh-my-zsh.sh
+if [[ -n $__old_zdotdir ]]; then
+  ZDOTDIR=$__old_zdotdir
+else
+  unset ZDOTDIR
+fi
+unset __old_zdotdir
 if [[ -n $__old_xdg_home ]]; then
   export XDG_CACHE_HOME=$__old_xdg_home
   unset __old_xdg_home
