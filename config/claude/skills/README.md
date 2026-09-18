@@ -6,7 +6,7 @@ Skills under this directory are symlinked to `~/.claude/skills/` by `scripts/con
 
 One rule decides it:
 
-- **Has a `pixi.toml` (bundles Python code)** → its own git repository, added here as a git submodule. Own history, own tests, own lock file, installable on its own with a single `git clone` into `~/.claude/skills/`.
+- **Has a `pyproject.toml` (bundles Python code)** → its own git repository, added here as a git submodule. Own history, own tests, own lock file, installable on its own with a single `git clone` into `~/.claude/skills/`.
 - **Pure Markdown (`SKILL.md` plus optional `references/`)** → committed directly in this repository. It evolves together with `CLAUDE.md` and `rules/`, so one change is one commit.
 
 ## What goes where
@@ -20,7 +20,7 @@ One rule decides it:
 ```
 <name>/
 ├── SKILL.md        # frontmatter: name, description; commands use ${CLAUDE_SKILL_DIR}
-├── pixi.toml       # own environment; entry points defined under [tasks]
+├── pyproject.toml  # own Pixi environment; entry points under [tool.pixi.tasks]
 ├── scripts/        # entry-point scripts and library code
 ├── references/     # detailed docs loaded by Claude only when needed
 └── tests/          # pytest, mirrors scripts/
@@ -29,7 +29,7 @@ One rule decides it:
 Commands in `SKILL.md` are written as
 
 ```bash
-pixi run --manifest-path ${CLAUDE_SKILL_DIR}/pixi.toml <task> [args]
+pixi run --manifest-path ${CLAUDE_SKILL_DIR}/pyproject.toml <task> [args]
 ```
 
 so they work wherever the skill is installed and create the environment on first use.
