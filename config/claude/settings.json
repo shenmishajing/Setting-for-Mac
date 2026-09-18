@@ -13,5 +13,11 @@
     "job": "off",
     "research-project": "off"
   },
-  "claudeMdExcludes": []
+  "claudeMdExcludes": [
+    "**/claude/rules/answering.md",
+    "**/claude/rules/working-style.md",
+    "**/claude/rules/safety.md",
+    "**/claude/rules/python-projects.md"
+  ],
+  "remoteControlAtStartup": true
 }
