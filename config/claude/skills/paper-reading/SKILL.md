@@ -1,86 +1,62 @@
 ---
 name: paper-reading
-description: Introduce, summarize, review, or digest research papers. Provides the fixed nine-point structure for a deep paper introduction, a concise OpenReview-style review, and a multi-paper category digest. Use when the user asks to explain, introduce, summarize, read, review, critique, or write up one or more papers.
+description: Deep-read a research paper and write a structured nine-point reading note (背景, 核心问题, 之前工作怎么做, 核心 method, 与之前工作的区别, 实验设计, 实验分析, 结论, and a quality audit of clarity, reproducibility and suspicious signs). Use when the user asks to read, introduce, explain, summarize, or 精读 a paper.
 ---
 
-# Paper reading and write-ups
+# Paper reading note
 
-Three modes. Pick the one that matches the request. If the user asks to introduce, explain, or read a paper without more specific instructions, use mode 1.
+When asked to read, introduce, or explain a paper, output one structured note with exactly the nine sections below, in this order, using these headings (in the conversation language; the Chinese names are the user's own). `${CLAUDE_SKILL_DIR}/references/example-reading-note.md` shows the expected depth.
 
-Rules for every mode:
+## The nine points
 
-- Write in the language the user is chatting in. Keep paper titles, method names, and dataset names in their original form.
-- Read the full paper when it is available. Say explicitly when a write-up is based only on the abstract or a partial text.
-- Ground every judgement in the paper's own text or in cited prior work. If the evidence is insufficient, say so instead of guessing.
-- Never fabricate results, numbers, citations, or implementation details.
-- When a claim about prior work matters, cite the prior paper with a link (arXiv or venue page).
-- Depth matters more than brevity. `${CLAUDE_SKILL_DIR}/references/example-introduction.md` shows the expected granularity.
+1. **背景 / Background**
+   What research context the paper sits in, and why the problem is worth studying.
 
-## Mode 1: introduce a paper (nine points, in this order)
+2. **核心问题 / Core problem**
+   The specific problem the paper tries to solve, and how the paper defines it.
 
-Use a heading per point. Within a point, use numbered sub-items whenever there is more than one component, comparison, dataset, or experiment to cover.
+3. **之前工作怎么做 / How prior work does it**
+   How related work handled this problem before this paper, and the limitations of each line of work.
 
-1. **Background**
-   The area, what was already known or already worked, and the setting the paper assumes. Enough for a reader outside the subfield to follow the rest.
+4. **核心 method / The method**
+   What the method actually is. Cover, concretely:
+   - the input and the output;
+   - the key modules and what each computes;
+   - the training procedure;
+   - how it is used at inference or test time.
 
-2. **Core problem**
-   The precise problem or gap the paper attacks, stated both as the authors frame it and as you would. Why existing solutions fail on it, concretely.
+5. **与之前工作的区别 / Differences from prior work**
+   Focus on **method-level novelty**: compared with existing methods that solve the same or a similar problem, what exactly is new in the method. Do not just repeat the authors' claims of being "stronger", "more general", or "better", and do not substitute your own framing for the paper's.
 
-3. **How prior work does it**
-   The closest existing approaches, each as a separate item: what it does, what assumption or mechanism it relies on, and where it breaks.
+6. **实验设计 / Experiment design**
+   Datasets, environments, or tasks; baselines; metrics; the experimental setup; and whether the setup is reasonable.
 
-4. **The method, concretely**
-   At the level a reader could re-implement it. Split into numbered modules. For each module: its input and output, what it computes, and the key design choices with the reasons the authors give. Cover the training or inference procedure end to end, including loss or objective, data flow, and any approximations. Name what is new versus borrowed. If the paper leaves a step unspecified, say which.
+7. **实验分析 / Result analysis**
+   Do not just restate table numbers. Explain which results matter most, what they show, and whether there are negative results, boundary conditions, or places that are not convincing.
 
-5. **Differences from prior work**
-   One item per compared line of work, mirroring point 3: what changes, and whether the change is a new mechanism or a recombination of known pieces.
+8. **结论 / Conclusions**
+   What the paper ultimately demonstrates, and how its contribution should be accurately summarized.
 
-6. **Experiment design**
-   Report what the paper actually does, item by item:
-   - datasets or benchmarks: which ones and why they fit the claim;
-   - metrics: which ones, why, and whether they are the mainstream choice for this task;
-   - baselines: which ones, what they represent, and whether the comparison is fair (same backbone, same compute, same test-time budget, strong rather than weak baselines);
-   - ablations: which components are removed or swapped, and which claim each ablation is meant to support;
-   - any analysis experiments (mechanism analysis, case studies, scaling curves).
-   Note designs you would have expected but that are missing.
+9. **method 描述是否清晰、是否足够复现、以及是否存在像 AI 生成/瞎编的可疑之处 / Quality audit**
+   The user's added quality check. Evaluate:
+   - whether the method is described clearly;
+   - whether there is enough detail to reproduce it;
+   - whether there are logical jumps, claims not supported by the experiments, exaggerated narrative, or signs that the text was AI-generated or fabricated and the authors never fully implemented the method.
 
-7. **Result analysis**
-   The main numbers with the comparison they come from. What the results do and do not support. Trends across settings, failure cases, variance or seeds if reported, and anything where the gain is smaller or less consistent than the text implies.
+## Fixed requirements
 
-8. **Conclusions**
-   What the paper claims to have shown, the limitations the authors admit, and the limitations they do not.
+- For points 1 to 8, extract and summarize from the paper itself first. Do not fill gaps with imagination.
+- If the paper does not clearly address a point, first say so explicitly ("the paper does not clearly state this"), then give your own cautious interpretation separately.
+- Point 5 must answer the method-level novelty question, not a generic comparison.
+- Avoid empty summaries. Be specific, evidence-based, and informative enough that the reader knows what the paper actually did.
+- Where possible, support summaries with the paper's own key statements, equations, experimental observations, or section references.
+- Never complete an unclear passage into a definite fact on the authors' behalf. Mark it as inference or as your interpretation.
+- If the method closely resembles an existing line of work, say so directly. Do not accept novelty because the authors claim it.
+- Read the full text when available. State explicitly when the note is based only on the abstract or partial text.
 
-9. **Judgement: clarity, reproducibility, and suspicious signs**
-   - Clarity: is the method described unambiguously, or do key steps rely on the reader guessing?
-   - Reproducibility: code, hyperparameters, compute, seeds, data splits. Could the results be rerun?
-   - Suspicious signs, each with the evidence: text that reads as AI-assembled or generic; a method described but not visibly used in the experiments; claimed modules absent from ablations or from the released code; results inconsistent with the described mechanism; numbers for baselines that disagree with their original papers. If nothing looks wrong, say so.
+## Style
 
-## Mode 2: review a paper (OpenReview style)
-
-The user prefers concise drafts in simple, human-like wording, as a reviewer would actually write. Structure:
-
-1. **Summary**: two to four sentences on what the paper does and claims. Neutral tone.
-2. **Strengths**: bullet list. Each bullet is one concrete strength with a pointer to where it is shown (section, table, figure).
-3. **Weaknesses**: bullet list, most important first. Each bullet states the problem, why it matters for the paper's claims, and what would fix it. Distinguish fixable-in-rebuttal from fundamental.
-4. **Questions for the authors**: numbered, answerable, tied to specific weaknesses.
-5. **Minor issues**: typos, notation, missing references. Keep short.
-6. **Scores**: soundness, presentation, contribution, overall rating, confidence, each with one sentence of justification. Follow the venue's scale if the user names one.
-
-Write it so the user can paste it with light editing. No preamble, no meta commentary.
-
-## Mode 3: digest several papers
-
-Used for daily or weekly paper reports and for "summarize these N papers" requests.
-
-1. **Count and statistics**: date window and how many papers were fetched, filtered, and kept, as concise bullets.
-2. **Category overview**: group the papers into a small number of clear categories. For each category explain what it is about and how it differs from prior trends.
-3. **Detailed analysis by category**: same categories as above. For every paper:
-   - first line: the title as a Markdown link to the paper's URL;
-   - a flexible analysis, not a rigid checklist;
-   - the method part must be concrete enough that a reader understands what was actually done, not only high-level buzzwords;
-   - if the paper's method description is too vague for concrete understanding or reproduction, say so.
-
-## Related tooling
-
-- Finding, filtering, and correcting paper metadata is handled by the `paper-skills` skill. Use it for collection; use this skill for reading and writing.
-- When cleaning a bibliography, prefer upgrading arXiv preprints to their published venue citations whenever reliable published metadata is available.
+- Clear, specific, research-discussion tone. Not a promotional summary.
+- Few generalities, many informative judgements.
+- Within a section, distinguish "what the paper explicitly says" from "my understanding" when that helps.
+- Use numbered sub-sections inside a point whenever there is more than one module, comparison, dataset, or experiment to cover.
