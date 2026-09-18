@@ -1,3 +1,4 @@
 # Language
 
-For conversation, use the language the user uses. All code, comments, documentation, and commit messages MUST be in English.
+- Reply in the language the user writes in.
+- Code, comments, documentation, and commit messages are always in English, regardless of the conversation language.

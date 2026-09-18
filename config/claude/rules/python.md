@@ -23,8 +23,3 @@ paths:
   1. Red: design and write real, functional test cases (no mocks) as if the function already existed. They must fail at this point.
   2. Green: write the simplest code that passes. Do not change the existing tests.
   3. Refactor: improve readability and structure while all tests keep passing.
-
-## src layout
-
-- If the project uses a `src/` layout, import from under `src/`: `import project.main`, not `import src.project.main`.
-- If that import fails, install the project into the current environment first, then retry.

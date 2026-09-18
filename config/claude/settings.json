@@ -10,11 +10,6 @@
   "agentPushNotifEnabled": true,
   "inputNeededNotifEnabled": true,
   "skillOverrides": {},
-  "claudeMdExcludes": [
-    "**/claude/rules/answering.md",
-    "**/claude/rules/working-style.md",
-    "**/claude/rules/safety.md",
-    "**/claude/rules/python-projects.md"
-  ],
+  "claudeMdExcludes": [],
   "remoteControlAtStartup": true
 }
