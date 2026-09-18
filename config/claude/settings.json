@@ -1,10 +1,17 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "WebFetch",
       "WebSearch",
       "Bash"
-    ]
-  }
+    ],
+    "defaultMode": "acceptEdits"
+  },
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true,
+  "skillOverrides": {
+    "job": "off",
+    "research-project": "off"
+  },
+  "claudeMdExcludes": []
 }

@@ -11,9 +11,10 @@ One rule decides it:
 
 ## What goes where
 
-- `CLAUDE.md`: short constraints that apply to every task. Target well under 200 lines.
+- `CLAUDE.md`: only the language rule.
+- `rules/*.md` without `paths:` frontmatter: one topic per file, loaded every session exactly like `CLAUDE.md`. Splitting by topic lets a single topic be switched off with `claudeMdExcludes` in `settings.json`.
 - `rules/*.md` with `paths:` frontmatter: conventions that only matter for certain file types; they load when Claude reads matching files.
-- `skills/<name>/SKILL.md`: procedures, templates, and tooling that load on demand.
+- `skills/<name>/SKILL.md`: procedures, templates, and tooling that load on demand. A skill is switched off or restricted with `skillOverrides` in `settings.json` (`on`, `name-only`, `user-invocable-only`, `off`).
 
 ## Format for a code-bearing skill
 
