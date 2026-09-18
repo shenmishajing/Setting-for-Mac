@@ -37,5 +37,5 @@ so they work wherever the skill is installed and create the environment on first
 
 ## Invocation control
 
-- Heavy or side-effecting procedures (`job`, `research-project`, `commit`) set `disable-model-invocation: true`: only the user triggers them with `/<name>`.
-- Knowledge and writing skills keep the default so Claude can load them when the task matches their `description`.
+- Heavy or side-effecting procedures set `disable-model-invocation: true` so only the user triggers them with `/<name>`.
+- Knowledge and tooling skills keep the default so Claude can load them when the task matches their `description`.

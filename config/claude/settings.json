@@ -9,10 +9,7 @@
   },
   "agentPushNotifEnabled": true,
   "inputNeededNotifEnabled": true,
-  "skillOverrides": {
-    "job": "off",
-    "research-project": "off"
-  },
+  "skillOverrides": {},
   "claudeMdExcludes": [
     "**/claude/rules/answering.md",
     "**/claude/rules/working-style.md",
