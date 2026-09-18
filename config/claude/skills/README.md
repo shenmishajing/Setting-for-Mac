@@ -11,8 +11,7 @@ One rule decides it:
 
 ## What goes where
 
-- `CLAUDE.md`: only the language rule.
-- `rules/*.md` without `paths:` frontmatter: one topic per file, loaded every session exactly like `CLAUDE.md`. Splitting by topic lets a single topic be switched off with `claudeMdExcludes` in `settings.json`.
+- `rules/*.md` without `paths:` frontmatter: one topic per file, loaded every session (there is no CLAUDE.md; unscoped rules load exactly like one would). Splitting by topic lets a single topic be switched off with `claudeMdExcludes` in `settings.json`.
 - `rules/*.md` with `paths:` frontmatter: conventions that only matter for certain file types; they load when Claude reads matching files.
 - `skills/<name>/SKILL.md`: procedures, templates, and tooling that load on demand. A skill is switched off or restricted with `skillOverrides` in `settings.json` (`on`, `name-only`, `user-invocable-only`, `off`).
 

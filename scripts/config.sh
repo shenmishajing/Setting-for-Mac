@@ -26,6 +26,6 @@ done
 # Code-bearing skills are git submodules under config/claude/skills.
 git -C "$REPO" submodule update --init --recursive
 mkdir -p "$HOME/.claude"
-for item in CLAUDE.md settings.json rules skills; do
+for item in settings.json rules skills; do
   link "$REPO/config/claude/$item" "$HOME/.claude/$item"
 done
